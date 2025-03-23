@@ -43,13 +43,21 @@ resource "aws_security_group" "new-terraform-sg" {
   }
 }
 
+variable "enable_instance" {
+  description = "Boolean flag to enable or disable the instance"
+  type        = bool
+  default     = true
+}
+
 resource "aws_instance" "terraform-ec2" {
-  count = ${count} 
-  ami           = var.ami_id
-  key_name = var.key_name
-  instance_type = var.instance_type
+  count = var.enable_instance ? 1 : 0  # Converts boolean to integer
+
+  ami                    = var.ami_id
+  key_name               = var.key_name
+  instance_type          = var.instance_type
   vpc_security_group_ids = [aws_security_group.new-terraform-sg.id]
-  tags= {
+
+  tags = {
     Name = var.tag_name
   }
 }
