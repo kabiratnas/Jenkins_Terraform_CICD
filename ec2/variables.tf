@@ -44,3 +44,10 @@ variable "vpc_cidr" {
     type        = string
     default     = "172.31.0.0/16"
 }
+
+variable "allowed_ips" {
+    description = "List of allowed IPs for RDP access"
+    type        = list(string)
+    default     = ["0.0.0.0/0"]  # Change this to your real IP for security
+}
+
