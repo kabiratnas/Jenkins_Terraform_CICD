@@ -43,12 +43,6 @@ resource "aws_security_group" "new-terraform-sg" {
   }
 }
 
-variable "enable_instance" {
-  description = "Boolean flag to enable or disable the instance"
-  type        = bool
-  default     = true
-}
-
 resource "aws_instance" "terraform-ec2" {
   count = var.INSTANCE_COUNT
   ami           = var.ami_id
