@@ -1,32 +1,40 @@
 variable "aws_region" {
-       description = "The AWS region to create things in." 
-       default     = "us-east-1" 
+    description = "The AWS region to create things in." 
+    type        = string
+    default     = "us-east-1"
 }
 
 variable "key_name" { 
-    description = " SSH keys to connect to ec2 instance" 
-    default     =  "jenkins-key"
+    description = "SSH key name to connect to EC2 instance" 
+    type        = string
+    default     = "jenkins-key"
 }
 
 variable "instance_type" { 
-    description = "instance type for ec2" 
-    default     =  "t2.medium" 
+    description = "Instance type for EC2" 
+    type        = string
+    default     = "t2.medium"
 }
 
 variable "security_group" { 
-    description = "Name of security group" 
-    default     = "new-terraform-sg" 
+    description = "Name of the security group" 
+    type        = string
+    default     = "new-terraform-sg"
 }
 
 variable "tag_name" { 
-    description = "Tag Name of for Ec2 instance" 
-    type     = string
-} 
-variable "ami_id" { 
-    description = "AMI for Ubuntu Ec2 instance" 
-    default     = "ami-0e1bed4f06a3b463d" 
+    description = "Tag name for the EC2 instance" 
+    type        = string
 }
+
+variable "ami_id" { 
+    description = "AMI for Ubuntu EC2 instance" 
+    type        = string
+    default     = "ami-0e1bed4f06a3b463d"
+}
+
 variable "INSTANCE_COUNT" { 
-    description = "Instance count" 
-    default     = "5" 
+    description = "Number of EC2 instances to create" 
+    type        = number
+    default     = 5
 }
