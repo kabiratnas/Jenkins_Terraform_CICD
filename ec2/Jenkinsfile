@@ -3,12 +3,13 @@ pipeline {
 
     parameters {
         choice(name: 'TAG_NAME', choices: ['Server_dev', 'Server_test', 'Server_prod'], description: 'Select the Tag Name for the EC2 instance')
-        choice(name: 'TERRAFORM_ACTION', choices: ['init', 'plan', 'apply', 'destroy'], description: 'Select Terraform action')
+        choice(name: 'TERRAFORM_ACTION', choices: ['init & plan', 'apply', 'destroy'], description: 'Select Terraform action')
     }
 
     environment {
         AWS_REGION = 'us-east-1'
         TF_WORKING_DIR = 'ec2'
+        TF_VAR_tag_name = "${params.TAG_NAME}"
     }
 
             stages {
