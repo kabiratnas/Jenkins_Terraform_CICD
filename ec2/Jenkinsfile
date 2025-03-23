@@ -11,7 +11,7 @@ pipeline {
         AWS_REGION = 'us-east-1'
         TF_WORKING_DIR = 'ec2'
         TF_VAR_tag_name = "${params.TAG_NAME}"
-        TF_VAR_instance_count = "${params.INSTANCE_COUNT}".to integer()
+        TF_VAR_instance_count = "${params.INSTANCE_COUNT}"
     }
 
     stages {
