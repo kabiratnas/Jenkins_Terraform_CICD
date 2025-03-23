@@ -41,7 +41,7 @@ resource "aws_security_group" "new-terraform-sg" {
     from_port   = 3389
     to_port     = 3389
     protocol    = "tcp"
-    cidr_blocks = ["YOUR_IP/32"]  # Change this!
+    cidr_blocks = var.allowed_ips
   }
 
   # Allow all outbound traffic
