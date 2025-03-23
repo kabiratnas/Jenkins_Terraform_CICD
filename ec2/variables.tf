@@ -20,7 +20,7 @@ variable "security_group" {
 
 variable "tag_name" { 
     description = "Tag Name of for Ec2 instance" 
-    default     = "Server_dev" 
+    type     = string
 } 
 variable "ami_id" { 
     description = "AMI for Ubuntu Ec2 instance" 
@@ -28,5 +28,5 @@ variable "ami_id" {
 }
 variable "INSTANCE_COUNT" { 
     description = "Instance count" 
-    default     = "2" 
+    default     = "5" 
 }
