@@ -50,15 +50,12 @@ variable "enable_instance" {
 }
 
 resource "aws_instance" "terraform-ec2" {
-  count = var.enable_instance ? 1 : 0  # Converts boolean to integer
-
-  ami                    = var.ami_id
-  key_name               = var.key_name
-  instance_type          = var.instance_type
+  count = var.INSTANCE_COUNT
+  ami           = var.ami_id
+  key_name = var.key_name
+  instance_type = var.instance_type
   vpc_security_group_ids = [aws_security_group.new-terraform-sg.id]
-
-  tags = {
+  tags= {
     Name = var.tag_name
   }
 }
-
