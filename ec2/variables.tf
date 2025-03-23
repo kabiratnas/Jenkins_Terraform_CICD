@@ -33,7 +33,7 @@ variable "ami_id" {
     default     = "ami-0e1bed4f06a3b463d"
 }
 
-variable "INSTANCE_COUNT" { 
+variable "instance_count" { 
     description = "Number of EC2 instances to create" 
     type        = number
     default     = 5
