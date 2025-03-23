@@ -64,8 +64,6 @@ resource "aws_instance" "terraform-ec2" {
   key_name               = var.key_name
   instance_type          = var.instance_type
   vpc_security_group_ids = [aws_security_group.new-terraform-sg.id]
-  subnet_id              = aws_subnet.main.id  # <-- Subnet added
-
   tags = {
     Name = var.tag_name
   }
