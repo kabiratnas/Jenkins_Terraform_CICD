@@ -4,7 +4,7 @@ pipeline {
     parameters {
         choice(name: 'TAG_NAME', choices: ['Server_dev', 'Server_test', 'Server_prod'], description: 'Select the Tag Name for the EC2 instance')
         choice(name: 'TERRAFORM_ACTION', choices: ['init & plan', 'apply', 'destroy'], description: 'Select Terraform action')
-        choice(name: 'INSTANCE_COUNT', choices: ['1', '2', '3', '4', '5'], description: 'Select the number of EC2 instances')
+        choice(name: 'INSTANCE_COUNT', choices: ['1', '2', '3', '4', '5'], description: 'Select the number of my EC2 instances')
     }
 
     environment {
