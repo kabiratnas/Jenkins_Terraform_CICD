@@ -38,3 +38,9 @@ variable "INSTANCE_COUNT" {
     type        = number
     default     = 5
 }
+
+variable "vpc_cidr" {
+    description = "CIDR block for the VPC"
+    type        = string
+    default     = "172.31.0.0/16"
+}
