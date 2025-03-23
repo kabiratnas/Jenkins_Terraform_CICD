@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     parameters {
+        choice(name: 'TAG_NAME', choices: ['Server_dev', 'Server_test', 'Server_prod'], description: 'Select the Tag Name for the EC2 instance')
         choice(name: 'TERRAFORM_ACTION', choices: ['init', 'plan', 'apply', 'destroy'], description: 'Select Terraform action')
     }
 
