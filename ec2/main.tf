@@ -59,7 +59,7 @@ resource "aws_security_group" "new-terraform-sg" {
 
 # Create EC2 Instance
 resource "aws_instance" "terraform-ec2" {
-  count                  = var.INSTANCE_COUNT
+  count                  = var.instance_count
   ami                    = var.ami_id
   key_name               = var.key_name
   instance_type          = var.instance_type
