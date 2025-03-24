@@ -85,5 +85,5 @@ git clone https://github.com/YOUR_USERNAME/Jenkins-Terraform-CICD.git
 ## License
 ---
 ## Contact
-For questions or collaborations, reach out at: **your.email@example.com**
+
 
