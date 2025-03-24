@@ -17,8 +17,6 @@ This project automates AWS infrastructure provisioning using **Jenkins** and **T
 ```
 Jenkins_Terraform_CICD/
 ├── ec2/                  # Terraform directory (contains Terraform config files)
-├── .gitignore             # Ignore Terraform state files & Jenkins build files
-├── .terraform.lock.hcl     # Terraform lock file (auto-generated)
 ├── Jenkinsfile            # Jenkins pipeline script
 ├── main.tf                # Terraform main configuration file
 ├── variables.tf           # Terraform variables file
